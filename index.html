@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Huérfano - Mantenimiento de Consolas y PC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Oscar Huérfano - Expertos en Gaming y PC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #0056b3;
-            --secondary-color: #00a8ff;
+            --secondary-color: #00e5ff; /* Cyan neón más brillante */
             --whatsapp-green: #25D366;
             --whatsapp-dark: #128C7E;
-            --bg-dark: #0a0a0a;
-            --bg-card: #151515;
+            --bg-dark: #070709;
+            --bg-card: rgba(20, 20, 25, 0.8);
             --text-light: #ffffff;
-            --text-gray: #cccccc;
+            --text-gray: #a0a0b0;
         }
 
         * {
@@ -29,75 +29,124 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
+            /* Fondo tecnológico sutil */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 86, 179, 0.1), transparent 25%);
+            background-attachment: fixed;
         }
 
-        /* Header / Hero Section */
+        /* Header / Hero Section con imagen de fondo */
         header {
-            background: linear-gradient(135deg, #001f3f 0%, #0a0a0a 100%);
-            padding: 40px 20px;
+            position: relative;
+            background: linear-gradient(rgba(7, 7, 9, 0.85), rgba(7, 7, 9, 0.95)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 80px 20px;
             text-align: center;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            box-shadow: 0 5px 25px rgba(0, 229, 255, 0.1);
         }
 
         .brand {
             color: var(--secondary-color);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 900;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--text-gray);
-            margin-bottom: 30px;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
         }
 
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
+        }
+
+        /* Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        .section-title span {
+            color: var(--secondary-color);
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .service-card {
             background-color: var(--bg-card);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.2);
-            border-color: var(--secondary-color);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card h3 {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+        }
+        
+        .service-card h3 i {
+            color: var(--secondary-color);
+            font-size: 2rem;
         }
 
         .service-list {
@@ -105,61 +154,115 @@
         }
 
         .service-list li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+            color: var(--text-gray);
         }
 
         .service-list li i {
             color: var(--secondary-color);
-            margin-top: 5px;
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Galería de Accesorios y PC */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            transition: bottom 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+
+        .gallery-title {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         /* Consoles Supported */
         .consoles-supported {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 40px;
+            background: linear-gradient(90deg, rgba(20,20,25,0.8), rgba(10,10,15,0.8));
+            padding: 40px;
+            border-radius: 15px;
             text-align: center;
-            border: 1px solid #333;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .brands-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
-            margin-top: 20px;
-            font-size: 2rem;
+            margin-top: 30px;
         }
 
         .brand-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--text-gray);
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+        
+        .brand-item:hover {
+            color: var(--secondary-color);
+        }
+
+        .brand-item i {
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         .brand-item span {
-            font-size: 1rem;
-            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         /* CTA WhatsApp Button */
         .cta-container {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(to right, #111, #1a1a1a, #111);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        .cta-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--whatsapp-green);
+            padding: 60px 20px;
+            background: linear-gradient(180deg, transparent, rgba(37, 211, 102, 0.05));
         }
 
         .btn-whatsapp {
@@ -168,30 +271,35 @@
             gap: 15px;
             background-color: var(--whatsapp-green);
             color: white;
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-weight: 700;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-whatsapp:hover {
             background-color: var(--whatsapp-dark);
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
         }
 
         .btn-whatsapp i {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
+            background-color: #030303;
             font-size: 0.9rem;
             color: var(--text-gray);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         /* Floating WhatsApp */
@@ -201,27 +309,32 @@
             right: 30px;
             background-color: var(--whatsapp-green);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-decoration: none;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
             z-index: 1000;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .float-wa:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.2rem; }
-            .btn-whatsapp { font-size: 1.1rem; padding: 12px 25px; }
+            h1 { font-size: 2.2rem; }
+            header { padding: 50px 20px; }
+            .btn-whatsapp { font-size: 1rem; padding: 15px 30px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -229,11 +342,14 @@
 
     <header>
         <div class="brand">Óscar Huérfano</div>
-        <h1>Mantenimiento de Consolas</h1>
-        <h2>Y Soporte y Reparación de Computadores</h2>
+        <h1>Mantenimiento & Setup</h1>
+        <h2>Reparación de Consolas, Computadores y Venta de Accesorios Tecnológicos</h2>
     </header>
 
     <div class="container">
+        
+        <!-- Sección de Servicios -->
+        <h2 class="section-title">Nuestros <span>Servicios</span></h2>
         <div class="services-grid">
             <!-- Consolas -->
             <div class="service-card">
@@ -251,17 +367,47 @@
             <div class="service-card">
                 <h3><i class="fas fa-laptop-code"></i> Computadores</h3>
                 <ul class="service-list">
-                    <li><i class="fas fa-check-circle"></i> Diagnóstico de fallas de hardware y software</li>
-                    <li><i class="fas fa-check-circle"></i> Formateo e instalación de sistemas operativos</li>
-                    <li><i class="fas fa-check-circle"></i> Cambio de pasta térmica y limpieza general</li>
-                    <li><i class="fas fa-check-circle"></i> Optimización y mejora de rendimiento</li>
-                    <li><i class="fas fa-check-circle"></i> Solución a problemas de temperatura</li>
+                    <li><i class="fas fa-check-circle"></i> Diagnóstico de hardware y software</li>
+                    <li><i class="fas fa-check-circle"></i> Formateo e instalación de SO</li>
+                    <li><i class="fas fa-check-circle"></i> Cambio de pasta térmica</li>
+                    <li><i class="fas fa-check-circle"></i> Mantenimiento preventivo/correctivo</li>
+                    <li><i class="fas fa-check-circle"></i> Ensamble de PC Gamer</li>
                 </ul>
             </div>
         </div>
 
+        <!-- Nueva Sección: Galería de Productos -->
+        <h2 class="section-title">Accesorios & <span>Tecnología</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openWhatsApp('¿Qué precio tienen los PC Gamer ensamblados?')">
+                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="PC Gamer">
+                <div class="gallery-overlay">
+                    <span class="gallery-title">Ensambles PC Gamer</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openWhatsApp('Estoy interesado en teclados mecánicos')">
+                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teclados Mecánicos">
+                <div class="gallery-overlay">
+                    <span class="gallery-title">Teclados Mecánicos</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openWhatsApp('Estoy interesado en mouses y periféricos')">
+                <img src="https://images.unsplash.com/photo-1615663245857-ac1eeb536628?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mouses Gamer">
+                <div class="gallery-overlay">
+                    <span class="gallery-title">Mouses & Periféricos</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openWhatsApp('Busco tarjetas de video y componentes')">
+                <img src="https://images.unsplash.com/photo-1591488320461-1b9181156641?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Componentes PC">
+                <div class="gallery-overlay">
+                    <span class="gallery-title">Hardware & Componentes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consolas Soportadas -->
         <div class="consoles-supported">
-            <h3 style="color: var(--secondary-color); margin-bottom: 10px;">CONSOLAS QUE ATENDEMOS</h3>
+            <h3 style="color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 10px;">CONSOLAS QUE ATENDEMOS</h3>
             <div class="brands-container">
                 <div class="brand-item">
                     <i class="fab fa-playstation"></i>
@@ -269,7 +415,7 @@
                 </div>
                 <div class="brand-item">
                     <i class="fab fa-xbox"></i>
-                    <span>Series X|S / One / 360</span>
+                    <span>Series X|S / One</span>
                 </div>
                 <div class="brand-item">
                     <i class="fas fa-gamepad"></i>
@@ -279,17 +425,18 @@
         </div>
     </div>
 
+    <!-- Llamado a la acción -->
     <div class="cta-container">
-        <p class="cta-text">¡Agiliza tu cita o consulta tus dudas ahora! 24/7</p>
+        <h2 style="margin-bottom: 25px;">¿Necesitas soporte o buscas un producto?</h2>
         <a href="#" class="btn-whatsapp" onclick="openWhatsApp()">
             <i class="fab fa-whatsapp"></i>
-            RESERVAR MANTENIMIENTO O COMPRAR ONLINE
+            Reserva o Compra Online
         </a>
     </div>
 
     <footer>
         <p>Oscar Huérfano - Expertos en Gaming y Computación</p>
-        <p>Servicio Profesional y Garantizado</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Servicio Profesional y Garantizado | 24/7</p>
     </footer>
 
     <!-- Floating WhatsApp Button -->
@@ -298,20 +445,17 @@
     </a>
 
     <script>
-        function openWhatsApp() {
-            // Número de WhatsApp basado en la imagen
-            const phoneNumber = "573112345678"; 
+        function openWhatsApp(customMessage) {
+            // Número actualizado al proporcionado: 57 300 4254476
+            const phoneNumber = "573004254476"; 
             
-            // Mensaje predeterminado
-            const message = "Hola Oscar, me gustaría reservar un mantenimiento o consultar por un producto online.";
+            // Si el usuario hace clic en una imagen de la galería, manda un mensaje específico
+            // Si hace clic en el botón general, manda el mensaje por defecto
+            const message = customMessage || "Hola Oscar, me gustaría reservar un mantenimiento o consultar por un producto online.";
             
-            // Codificar el mensaje para la URL
             const encodedMessage = encodeURIComponent(message);
-            
-            // URL de WhatsApp (funciona en móvil y versión Web)
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             
-            // Abrir en una nueva pestaña
             window.open(whatsappUrl, '_blank');
         }
     </script>
