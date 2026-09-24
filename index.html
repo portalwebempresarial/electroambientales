@@ -9,7 +9,7 @@
     <style>
         :root {
             --primary-color: #0056b3;
-            --secondary-color: #00e5ff; /* Cyan neón más brillante */
+            --secondary-color: #00e5ff; 
             --whatsapp-green: #25D366;
             --whatsapp-dark: #128C7E;
             --bg-dark: #070709;
@@ -29,17 +29,15 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
-            /* Fondo tecnológico sutil */
             background-image: 
                 radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(0, 86, 179, 0.1), transparent 25%);
             background-attachment: fixed;
         }
 
-        /* Header / Hero Section con imagen de fondo */
         header {
             position: relative;
-            background: linear-gradient(rgba(7, 7, 9, 0.85), rgba(7, 7, 9, 0.95)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(7, 7, 9, 0.85), rgba(7, 7, 9, 0.95)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1920&q=80') center/cover;
             padding: 80px 20px;
             text-align: center;
             border-bottom: 2px solid var(--secondary-color);
@@ -72,14 +70,12 @@
             margin: 0 auto 30px auto;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
-        /* Titles */
         .section-title {
             text-align: center;
             font-size: 2.2rem;
@@ -92,7 +88,6 @@
             color: var(--secondary-color);
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -128,10 +123,6 @@
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
             border-color: rgba(0, 229, 255, 0.3);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card h3 {
@@ -182,6 +173,7 @@
             aspect-ratio: 4/3;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            background-color: #111; /* Fallback color */
         }
 
         .gallery-item img {
@@ -216,9 +208,9 @@
             color: var(--secondary-color);
             font-weight: bold;
             font-size: 1.1rem;
+            text-shadow: 1px 1px 3px #000;
         }
 
-        /* Consoles Supported */
         .consoles-supported {
             background: linear-gradient(90deg, rgba(20,20,25,0.8), rgba(10,10,15,0.8));
             padding: 40px;
@@ -258,7 +250,6 @@
             letter-spacing: 1px;
         }
 
-        /* CTA WhatsApp Button */
         .cta-container {
             text-align: center;
             padding: 60px 20px;
@@ -292,7 +283,6 @@
             font-size: 2.2rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -302,7 +292,6 @@
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Floating WhatsApp */
         .float-wa {
             position: fixed;
             bottom: 30px;
@@ -348,10 +337,8 @@
 
     <div class="container">
         
-        <!-- Sección de Servicios -->
         <h2 class="section-title">Nuestros <span>Servicios</span></h2>
         <div class="services-grid">
-            <!-- Consolas -->
             <div class="service-card">
                 <h3><i class="fas fa-gamepad"></i> Consolas</h3>
                 <ul class="service-list">
@@ -363,7 +350,6 @@
                 </ul>
             </div>
 
-            <!-- Computadores -->
             <div class="service-card">
                 <h3><i class="fas fa-laptop-code"></i> Computadores</h3>
                 <ul class="service-list">
@@ -376,36 +362,35 @@
             </div>
         </div>
 
-        <!-- Nueva Sección: Galería de Productos -->
         <h2 class="section-title">Accesorios & <span>Tecnología</span></h2>
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openWhatsApp('¿Qué precio tienen los PC Gamer ensamblados?')">
-                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="PC Gamer">
+                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=600&q=80" alt="PC Gamer">
                 <div class="gallery-overlay">
                     <span class="gallery-title">Ensambles PC Gamer</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openWhatsApp('Estoy interesado en teclados mecánicos')">
-                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teclados Mecánicos">
+                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80" alt="Teclados Mecánicos">
                 <div class="gallery-overlay">
                     <span class="gallery-title">Teclados Mecánicos</span>
                 </div>
             </div>
+            <!-- IMÁGENES CORREGIDAS AQUÍ ABAJO -->
             <div class="gallery-item" onclick="openWhatsApp('Estoy interesado en mouses y periféricos')">
-                <img src="https://images.unsplash.com/photo-1615663245857-ac1eeb536628?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mouses Gamer">
+                <img src="https://images.unsplash.com/photo-1629429408209-1f9f2b090c29?auto=format&fit=crop&w=600&q=80" alt="Mouses Gamer">
                 <div class="gallery-overlay">
                     <span class="gallery-title">Mouses & Periféricos</span>
                 </div>
             </div>
             <div class="gallery-item" onclick="openWhatsApp('Busco tarjetas de video y componentes')">
-                <img src="https://images.unsplash.com/photo-1591488320461-1b9181156641?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Componentes PC">
+                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=600&q=80" alt="Componentes PC">
                 <div class="gallery-overlay">
                     <span class="gallery-title">Hardware & Componentes</span>
                 </div>
             </div>
         </div>
 
-        <!-- Consolas Soportadas -->
         <div class="consoles-supported">
             <h3 style="color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 10px;">CONSOLAS QUE ATENDEMOS</h3>
             <div class="brands-container">
@@ -425,7 +410,6 @@
         </div>
     </div>
 
-    <!-- Llamado a la acción -->
     <div class="cta-container">
         <h2 style="margin-bottom: 25px;">¿Necesitas soporte o buscas un producto?</h2>
         <a href="#" class="btn-whatsapp" onclick="openWhatsApp()">
@@ -439,23 +423,16 @@
         <p style="margin-top: 10px; font-size: 0.8rem;">Servicio Profesional y Garantizado | 24/7</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="#" class="float-wa" onclick="openWhatsApp()">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
         function openWhatsApp(customMessage) {
-            // Número actualizado al proporcionado: 57 300 4254476
             const phoneNumber = "573004254476"; 
-            
-            // Si el usuario hace clic en una imagen de la galería, manda un mensaje específico
-            // Si hace clic en el botón general, manda el mensaje por defecto
             const message = customMessage || "Hola Oscar, me gustaría reservar un mantenimiento o consultar por un producto online.";
-            
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
             window.open(whatsappUrl, '_blank');
         }
     </script>
